@@ -38,3 +38,6 @@ No hace falta crear usuarios ni autenticación.
 El dataset tiene millones de registros, pero podés trabajar con los últimos 1000 registros y en
 cada update ir acumulándolos. No es necesario que la API esté preparada para manejar
 millones de registros.
+Sí deben persistir los datos de alguna forma, pero pueden bajarse a disco de la forma que te
+resulte más sencilla (ya sea en un JSON, CSV, sqlite, rdbms, etc). Tené presente que el CSV
+del dataset tiene mucha más data de la que necesitás.

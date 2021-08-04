@@ -2,7 +2,7 @@
 
 El Gobierno Nacional puso a disposición de la ciudadanía de la República Argentina un dataset
 que actualiza diariamente con los casos diarios de SARS-COV-2, popularmente conocido
-como: coronavirus.
+como coronavirus.
 Los datos están disponibles en:
 http://datos.salud.gob.ar/dataset/covid-19-casos-registrados-en-la-republica-argentina
 

@@ -5,39 +5,41 @@ que actualiza diariamente con los casos diarios de SARS-COV-2, popularmente cono
 como coronavirus.
 Los datos están disponibles en:
 http://datos.salud.gob.ar/dataset/covid-19-casos-registrados-en-la-republica-argentina
+De aquí tomar los datos para el ejercicio, el cual consta de construir una aplicación con las siguientes directivas:
 
-El ejercicio consta de construir una API REST con los siguientes endpoints:
+# API (Backend)
 
 ## Casos Totales
 
 ### GET /covid/total
 Debe soportar los siguientes filtros:
-1) Rango de Fechas (año/mes/día)
+1) Rango de Fechas
 2) Rango de Edad
 3) Género
 4) Provincia
 
-## Muertes
-
-### GET /covid/deaths
-Debe soportar los mismos filtros que el endpoint anterior.
-
 ## Carga
 
-### GET /covid/update
-Devuelve los siguientes datos:
-1) Cuándo se realizó la última
-2) Cuántos nuevos registros se agregaron
-
 ### POST /covid/update
-Dispara el proceso de carga de datos.
+Dispara el proceso de carga de un nuevo caso.
+Se deben poder ingresar los mismos datos que en el GET:
+1) Fecha
+2) Edad
+3) Género
+4) Provincia
 
-El ejercicio debe estar desarrollado en .NET 5 en adelante. Lo más importante es la simplicidad y elegancia
-que la complejidad y robustez.
-No hace falta crear usuarios ni autenticación.
-El dataset tiene millones de registros, pero podés trabajar con los últimos 1000 registros y en
-cada update ir acumulándolos. No es necesario que la API esté preparada para manejar
-millones de registros.
-Sí deben persistir los datos de alguna forma, pero pueden bajarse a disco de la forma que te
-resulte más sencilla (ya sea en un JSON, CSV, sqlite, rdbms, etc). Tené presente que el CSV
-del dataset tiene mucha más data de la que necesitás.
+# UI (Frontend)
+
+Crear una interfaz gráfica para mostrar los resultados de los endpoints. 
+Se debe poder ingresar los filtros que soporta la API de la manera que te resulte más conveniente.
+
+Podés utilizar el framework C# que quieras.
+
+- El ejercicio debe estar desarrollado en .NET 5 en adelante, tanto API como UI (Blazor preferentemente). 
+- Lo más importante es la simplicidad y elegancia que la complejidad y robustez.
+- No hace falta crear usuarios ni autenticación.
+- El dataset tiene millones de registros, pero podés trabajar con los últimos 1000 registros. 
+- No es necesario que la API esté preparada para manejar millones de registros.
+- Deben persistir los datos de alguna forma; pueden bajarse a disco de la forma que te
+resulte más sencilla (ya sea en un JSON, CSV, sqlite, rdbms, etc). 
+- Tené presente que el CSV del dataset tiene mucha más data de la que necesitás.
